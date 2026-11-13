@@ -1,0 +1,5 @@
+$ ghostband import broken.wav
+[stderr]
+ghostband: Could not decode the file: non-finite audio samples
+  next: Run ghostband import with a complete WAV or MP3 file.
+[exit 4]

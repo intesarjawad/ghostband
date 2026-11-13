@@ -1,0 +1,53 @@
+execute_process(COMMAND "${ENGINE}" --version
+  RESULT_VARIABLE result OUTPUT_VARIABLE output ERROR_VARIABLE error
+  OUTPUT_STRIP_TRAILING_WHITESPACE)
+if(NOT result EQUAL 0 OR NOT output STREQUAL "ghostband-engine ${VERSION}")
+  message(FATAL_ERROR "Expected engine version ${VERSION}, got: ${output}${error}")
+endif()
+
+function(expect_error message)
+  execute_process(COMMAND "${ENGINE}" ${ARGN}
+    RESULT_VARIABLE result OUTPUT_VARIABLE output ERROR_VARIABLE error)
+  if(NOT result EQUAL 1)
+    message(FATAL_ERROR "Expected exit 1 for ${ARGN}, got ${result}")
+  endif()
+  string(FIND "${error}" "${message}" found)
+  if(found EQUAL -1)
+    message(FATAL_ERROR "Expected '${message}' for ${ARGN}, got: ${error}")
+  endif()
+endfunction()
+
+expect_error("Select --offline" --seconds 1)
+expect_error("Select only one" --play --offline)
+expect_error("Select only one" --offline --play)
+expect_error("--seconds must be a positive integer" --play --seconds 0)
+expect_error("--seconds must be a positive integer" --play --seconds -1)
+expect_error("--seconds must be a positive integer" --play --seconds 1.5)
+expect_error("--seconds must be a positive integer" --play --seconds 4294967296)
+expect_error("Missing value for --seconds" --play --seconds)
+expect_error("--frames and --out require --offline" --play --frames 10)
+expect_error("--frames and --out require --offline" --play --out unused.wav)
+expect_error("--seconds requires --play" --offline --seconds 1)
+expect_error("Model assets missing" --play --seconds 1
+  --model-dir "${CMAKE_CURRENT_LIST_DIR}/missing-model-assets")
+message(STATUS "PASS: playback options reject invalid requests before loading")
+
+expect_error("--bench must be a positive integer" --bench 0)
+expect_error("--bench must be a positive integer" --bench -1)
+expect_error("--bench must be a positive integer" --bench 1.5)
+expect_error("--bench must be a positive integer" --bench 4294967296)
+expect_error("Missing value for --bench" --bench)
+expect_error("--latency-probes must be a nonnegative integer" --bench 60 --latency-probes -1)
+expect_error("--latency-probes must be a nonnegative integer" --bench 60 --latency-probes 1.5)
+expect_error("--latency-probes must be a nonnegative integer" --bench 60 --latency-probes 2147483648)
+expect_error("Missing value for --latency-probes" --bench 60 --latency-probes)
+expect_error("--latency-probes requires --bench" --play --latency-probes 1)
+expect_error("Select only one" --play --bench 60)
+expect_error("Select only one" --bench 60 --offline)
+expect_error("--seconds requires --play" --bench 60 --seconds 20)
+expect_error("--frames and --out require --offline" --bench 60 --out unused.wav)
+expect_error("Model assets missing" --bench 60 --latency-probes 50
+  --model-dir "${CMAKE_CURRENT_LIST_DIR}/missing-model-assets")
+expect_error("Model assets missing" --bench 1 --latency-probes 0
+  --model-dir "${CMAKE_CURRENT_LIST_DIR}/missing-model-assets")
+message(STATUS "PASS: bench options validate before model loading")

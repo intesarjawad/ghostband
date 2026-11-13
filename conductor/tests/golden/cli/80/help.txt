@@ -1,0 +1,23 @@
+$ ghostband --help
+Usage: ghostband [OPTIONS] [COMMAND] [ARGS]...
+
+  Import a tune, play a chart, or start the local server.
+
+Options:
+  --version          Show the version and exit.
+  --fake-engine      Run without models or an audio device.
+  --dev-origin TEXT  Allow one explicit development origin.
+  --help             Show this message and exit.
+
+Commands:
+  bench        Time frame generation on the real engine and record...
+  doctor       Check local prerequisites without opening an audio device.
+  eval         Write evaluation reports from measurements already taken.
+  export       Export a chart to an interchangeable chord-chart format.
+  export-midi  Export harmony and melody to a MIDI file.
+  import       Import audio, MIDI, a chart or an iReal Pro link without...
+  play         Play CHART_PATH, optionally saving a WAV recording and its...
+  render       Render CHART_PATH offline, without real-time playback.
+  schema       Write the portable chart JSON schema.
+  setup        Install the engine, models and local extraction environment.
+[exit 0]

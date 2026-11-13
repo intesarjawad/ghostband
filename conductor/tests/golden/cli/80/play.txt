@@ -1,0 +1,10 @@
+$ ghostband play greensleeves.chart.json --seconds 0.05 --record take.wav --fake-engine
+ghostband: Playing greensleeves.chart.json
+  next: Press Ctrl+C to stop.
+ghostband: Stopped greensleeves.chart.json
+  next: Run ghostband play to play another chart.
+ghostband: Wrote take.wav
+  next: Run ghostband --help for more commands.
+ghostband: Wrote take.take.json
+  next: Run ghostband --help for more commands.
+[exit 0]

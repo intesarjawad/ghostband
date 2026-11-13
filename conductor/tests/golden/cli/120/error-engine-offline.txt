@@ -1,0 +1,5 @@
+$ ghostband play greensleeves.chart.json --seconds 1
+[stderr]
+ghostband: Engine offline: engine executable engine is missing
+  next: Run ghostband setup, then ghostband doctor, which names anything still missing.
+[exit 3]

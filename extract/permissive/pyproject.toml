@@ -1,0 +1,25 @@
+[project]
+name = "ghostband-extract-permissive"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "beat-this==1.1.0",
+  "basic-pitch==0.4.0",
+  "librosa==0.11.0",
+  "mir_eval==0.8.2",
+  "soundfile",
+  # resampy imports pkg_resources, which setuptools 81 removed.
+  "setuptools<81",
+]
+
+[tool.uv]
+environments = ["sys_platform == 'darwin' and platform_machine == 'arm64'"]
+
+[dependency-groups]
+dev = ["pyright==1.1.414"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+pythonVersion = "3.11"
+include = ["*.py"]
+reportMissingTypeStubs = false

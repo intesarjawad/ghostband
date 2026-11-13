@@ -1,0 +1,17 @@
+$ ghostband eval live --help
+Usage: ghostband eval live [OPTIONS]
+
+  Write live.md from the sync, tempo, melody and engine measurements on disk.
+
+Options:
+  -o, --output FILE      Report to write; defaults to docs/benchmarks/live.md
+                         in a checkout.
+  --claims FILE          Claims file; defaults to docs/benchmarks/claims.json.
+  --sync FILE            Sync report from the sync measurement; defaults to
+                         docs/benchmarks/sync.md.
+  --extraction FILE      Extraction summary CSV; defaults to
+                         docs/benchmarks/extraction.csv.
+  --bench-dir DIRECTORY  Folder of saved engine benchmark runs; defaults to
+                         the app's bench folder.
+  --help                 Show this message and exit.
+[exit 0]

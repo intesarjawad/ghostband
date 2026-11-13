@@ -1,0 +1,11 @@
+$ ghostband eval --help
+Usage: ghostband eval [OPTIONS] COMMAND [ARGS]...
+
+  Write evaluation reports from measurements already taken.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  live  Write live.md from the sync, tempo, melody and engine...
+[exit 0]

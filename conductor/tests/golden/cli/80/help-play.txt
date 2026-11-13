@@ -1,0 +1,33 @@
+$ ghostband play --help
+Usage: ghostband play [OPTIONS] CHART_PATH
+
+  Play CHART_PATH, optionally saving a WAV recording and its take sidecar.
+
+Options:
+  --preset INTEGER RANGE          Style pair the band plays, numbered from 0
+                                  in the order the app lists them.  [x>=0]
+  --seconds FLOAT RANGE           Stop after this long; by default the band
+                                  plays to the end of the chart.  [x>0]
+  --record FILE                   Save what the band plays to this WAV, with a
+                                  .take.json sidecar beside it.
+  --take-run INTEGER RANGE        Repeat number written to the sidecar; the
+                                  band sounds the same.  [x>=1]
+  --take-condition [chords_melody|chords|none]
+                                  Use with --take-slider: guide the band with
+                                  the whole chart, its chords only, or
+                                  nothing.
+  --take-slider INTEGER RANGE     Use with --take-condition: hold the style
+                                  slider at style A (0) or B (1).  [0<=x<=1]
+  --take-tempo-factor FLOAT RANGE
+                                  Play the chart at this multiple of its
+                                  tempo, such as 0.8 for 80 percent.  [x>0]
+  --take-onset-mode INTEGER RANGE
+                                  Use with --take-tempo-factor: 0 lets the
+                                  model place note starts; 1 strikes the bass
+                                  on every beat.  [0<=x<=1]
+  --slider-sweep                  Sweep the style slider 0 to 1 over the
+                                  chart.
+  --fake-engine                   Use a stand-in engine with no models or
+                                  audio device; nothing is heard.
+  --help                          Show this message and exit.
+[exit 0]

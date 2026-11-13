@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: uv
+    directories: [/, /extract/permissive, /tools/mrt]
+    schedule: {interval: weekly}
+    groups: {python: {update-types: [minor, patch]}}
+    ignore:
+      # basic-pitch needs resampy below 0.4.3, which imports pkg_resources; setuptools 81 removed it.
+      - dependency-name: setuptools
+        versions: [">=81"]
+  - package-ecosystem: npm
+    directory: /ui
+    schedule: {interval: weekly}
+    groups: {npm: {update-types: [minor, patch]}}
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: {interval: weekly}
+    groups: {actions: {update-types: [minor, patch]}}
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule: {interval: weekly}

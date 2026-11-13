@@ -1,0 +1,6 @@
+$ ghostband render greensleeves.chart.json -o take.wav
+ghostband: Wrote take.wav
+  next: Run ghostband --help for more commands.
+ghostband: Wrote take.wav.json
+  next: Run ghostband --help for more commands.
+[exit 0]

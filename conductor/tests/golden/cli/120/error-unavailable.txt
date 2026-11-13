@@ -1,0 +1,5 @@
+$ ghostband bench
+[stderr]
+ghostband: Unavailable: engine or mrt2_small missing; run ghostband setup
+  next: Run ghostband doctor to check the local installation.
+[exit 7]

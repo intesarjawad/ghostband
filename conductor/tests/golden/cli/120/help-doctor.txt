@@ -1,0 +1,8 @@
+$ ghostband doctor --help
+Usage: ghostband doctor [OPTIONS]
+
+  Check local prerequisites without opening an audio device.
+
+Options:
+  --help  Show this message and exit.
+[exit 0]

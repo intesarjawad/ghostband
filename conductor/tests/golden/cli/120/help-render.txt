@@ -1,0 +1,12 @@
+$ ghostband render --help
+Usage: ghostband render [OPTIONS] CHART_PATH
+
+  Render CHART_PATH offline, without real-time playback.
+
+Options:
+  --model [mrt2_small|mrt2_base]
+  --preset INTEGER RANGE          [x>=0]
+  -o, --output, --out FILE        [required]
+  --tempo FLOAT RANGE             [x>0]
+  --help                          Show this message and exit.
+[exit 0]

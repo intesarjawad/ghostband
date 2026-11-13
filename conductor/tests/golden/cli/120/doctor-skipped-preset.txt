@@ -1,0 +1,6 @@
+$ ghostband --fake-engine doctor
+ghostband: Skipped preset presets/late.toml: line 2: invalid TOML: Invalid value (at line 2, column 5)
+  next: Fix the named line or field in that file, then run ghostband doctor again.
+ghostband: Local check: fake engine selected
+  next: Run ghostband to start the band, or ghostband --fake-engine to start without audio.
+[exit 0]

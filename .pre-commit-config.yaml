@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - {id: ruff-format, name: ruff format, entry: uv run ruff format --check, language: system, types: [python]}
+      - {id: ruff, name: ruff check, entry: uv run ruff check, language: system, types: [python]}
+      - {id: pyright, name: pyright, entry: make pyright, language: system, types: [python], pass_filenames: false}
+      - {id: ui, name: ui lint and types, entry: npm --prefix ui run precommit, language: system, files: ^ui/, pass_filenames: false}
+      - {id: clang-format, name: clang-format, entry: clang-format --dry-run --Werror, language: system, files: ^engine/(src|tests|fuzz)/}
+      - {id: gitleaks, name: gitleaks, entry: gitleaks git --staged --redact --exit-code 1, language: system, pass_filenames: false}

@@ -1,0 +1,5 @@
+$ ghostband play greensleeves.chart.json --seconds 1
+[stderr]
+ghostband: Engine offline: engine did not open its socket within 10 s
+  next: Run ghostband setup, then ghostband doctor, which names anything still missing.
+[exit 3]

@@ -1,0 +1,4 @@
+$ ghostband eval live -o live.md --claims claims.json --sync sync.md --extraction extraction.csv --bench-dir bench
+ghostband: Wrote live.md
+  next: Run ghostband --help for more commands.
+[exit 0]

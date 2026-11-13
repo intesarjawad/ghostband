@@ -1,0 +1,36 @@
+{
+  "name": "ghostband-ui",
+  "description": "Your chord chart, played by an experimental backing band on your Mac.",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "26.13.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "e2e": "playwright test --grep-invert @measure",
+    "measure:frames": "playwright test --grep @measure-frames",
+    "measure:coldstart": "playwright test --grep @measure-coldstart --pass-with-no-tests",
+    "precommit": "npm run lint && npm run format:check && npm run typecheck"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.0",
+    "@types/node": "26.6.6",
+    "eslint": "10.14.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.2",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  },
+  "overrides": {
+    "minimatch": "11.0.8"
+  }
+}

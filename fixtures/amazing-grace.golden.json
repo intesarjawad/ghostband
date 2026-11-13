@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "title": "Amazing Grace",
+  "source": "W. Walker, The Southern Harmony and Musical Companion (1835), p. 8, \"New Britain\", middle (tenor) staff at written pitch; bars 1-15, counting the opening measure with its half rest and quarter-note pickup as bar 1, taking the first ending once and omitting the second ending and further verses. Original harmonisation by Ghostband. https://archive.org/details/southernharmonym0000walk/page/8/mode/1up",
+  "rights": "public-domain",
+  "extractor": "manual",
+  "tempo_bpm": 90,
+  "beat_times_s": [],
+  "time_signature": [
+    3,
+    4
+  ],
+  "key": "C",
+  "sections": [
+    {
+      "name": "Opening",
+      "start_beat": 0.0,
+      "end_beat": 15.0
+    },
+    {
+      "name": "Middle",
+      "start_beat": 15.0,
+      "end_beat": 30.0
+    },
+    {
+      "name": "Close",
+      "start_beat": 30.0,
+      "end_beat": 44.0
+    }
+  ],
+  "chords": [
+    {
+      "start_beat": 0.0,
+      "end_beat": 3.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 3.0,
+      "end_beat": 6.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 6.0,
+      "end_beat": 9.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 9.0,
+      "end_beat": 12.0,
+      "symbol": "F"
+    },
+    {
+      "start_beat": 12.0,
+      "end_beat": 15.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 15.0,
+      "end_beat": 18.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 18.0,
+      "end_beat": 21.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 21.0,
+      "end_beat": 24.0,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 24.0,
+      "end_beat": 27.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 27.0,
+      "end_beat": 30.0,
+      "symbol": "Am"
+    },
+    {
+      "start_beat": 30.0,
+      "end_beat": 33.0,
+      "symbol": "F"
+    },
+    {
+      "start_beat": 33.0,
+      "end_beat": 36.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 36.0,
+      "end_beat": 39.0,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 39.0,
+      "end_beat": 42.0,
+      "symbol": "G7"
+    },
+    {
+      "start_beat": 42.0,
+      "end_beat": 44.0,
+      "symbol": "C"
+    }
+  ],
+  "melody": [
+    {
+      "start_beat": 2.0,
+      "end_beat": 3.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 3.0,
+      "end_beat": 5.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 5.0,
+      "end_beat": 5.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 5.5,
+      "end_beat": 6.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 6.0,
+      "end_beat": 8.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 8.0,
+      "end_beat": 9.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 9.0,
+      "end_beat": 11.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 11.0,
+      "end_beat": 12.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 12.0,
+      "end_beat": 14.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 14.0,
+      "end_beat": 15.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 15.0,
+      "end_beat": 17.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 17.0,
+      "end_beat": 17.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 17.5,
+      "end_beat": 18.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 18.0,
+      "end_beat": 20.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 20.0,
+      "end_beat": 20.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 20.5,
+      "end_beat": 21.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 21.0,
+      "end_beat": 23.0,
+      "pitch": 79
+    },
+    {
+      "start_beat": 23.0,
+      "end_beat": 23.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 23.5,
+      "end_beat": 24.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 24.0,
+      "end_beat": 26.0,
+      "pitch": 79
+    },
+    {
+      "start_beat": 26.0,
+      "end_beat": 26.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 26.5,
+      "end_beat": 27.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 27.0,
+      "end_beat": 29.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 29.0,
+      "end_beat": 29.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 29.5,
+      "end_beat": 30.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 30.0,
+      "end_beat": 32.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 32.0,
+      "end_beat": 32.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 32.5,
+      "end_beat": 33.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 33.0,
+      "end_beat": 35.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 35.0,
+      "end_beat": 36.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 36.0,
+      "end_beat": 38.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 38.0,
+      "end_beat": 38.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 38.5,
+      "end_beat": 39.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 39.0,
+      "end_beat": 41.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 41.0,
+      "end_beat": 42.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 42.0,
+      "end_beat": 44.0,
+      "pitch": 72
+    }
+  ],
+  "duration_beats": 44.0
+}

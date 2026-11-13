@@ -1,0 +1,786 @@
+{
+  "schema_version": 1,
+  "title": "Oh! Susanna",
+  "source": "Oh! Susanna, sung by C. A. Christy of the Christy Minstrels (New York: C. Holt Jr., 1848), p. 2 (unnumbered), p. 3 and p. 4 (PDF pages 2-4), solo vocal staff and chorus 1st Voice at written pitch in G major, 2/4 throughout. Vocal bars 1-24 plus the opening two-sixteenth-note pickup, counting the first full vocal measure as bar 1; chorus bars 17-24 repeated as printed. Full vocal verse and chorus; piano introduction and postlude are not melody events. Dotted rhythms, sixteenths, slurs as separate pitches and quarter rests retained; the fermata in bar 14 has nominal written duration. Original harmonisation by Ghostband. https://archive.org/details/OhSusannaOriginal1848SheetMusic ; scan https://archive.org/download/OhSusannaOriginal1848SheetMusic/oh%20susanna%20original%201848%20sheet%20music.pdf#page=2",
+  "rights": "public-domain",
+  "extractor": "manual",
+  "tempo_bpm": 100,
+  "beat_times_s": [],
+  "time_signature": [
+    2,
+    4
+  ],
+  "key": "G",
+  "sections": [
+    {
+      "name": "Pickup",
+      "start_beat": 0.0,
+      "end_beat": 0.5
+    },
+    {
+      "name": "Verse",
+      "start_beat": 0.5,
+      "end_beat": 32.5
+    },
+    {
+      "name": "Chorus",
+      "start_beat": 32.5,
+      "end_beat": 48.5
+    },
+    {
+      "name": "Chorus repeat",
+      "start_beat": 48.5,
+      "end_beat": 64.5
+    }
+  ],
+  "chords": [
+    {
+      "start_beat": 0.0,
+      "end_beat": 0.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 0.5,
+      "end_beat": 2.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 2.5,
+      "end_beat": 4.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 4.5,
+      "end_beat": 5.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 5.5,
+      "end_beat": 6.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 6.5,
+      "end_beat": 8.5,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 8.5,
+      "end_beat": 10.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 10.5,
+      "end_beat": 12.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 12.5,
+      "end_beat": 13.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 13.5,
+      "end_beat": 14.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 14.5,
+      "end_beat": 16.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 16.5,
+      "end_beat": 18.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 18.5,
+      "end_beat": 20.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 20.5,
+      "end_beat": 21.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 21.5,
+      "end_beat": 22.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 22.5,
+      "end_beat": 24.5,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 24.5,
+      "end_beat": 26.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 26.5,
+      "end_beat": 28.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 28.5,
+      "end_beat": 29.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 29.5,
+      "end_beat": 30.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 30.5,
+      "end_beat": 32.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 32.5,
+      "end_beat": 34.5,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 34.5,
+      "end_beat": 36.5,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 36.5,
+      "end_beat": 38.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 38.5,
+      "end_beat": 40.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 40.5,
+      "end_beat": 42.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 42.5,
+      "end_beat": 44.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 44.5,
+      "end_beat": 45.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 45.5,
+      "end_beat": 46.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 46.5,
+      "end_beat": 48.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 48.5,
+      "end_beat": 50.5,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 50.5,
+      "end_beat": 52.5,
+      "symbol": "C"
+    },
+    {
+      "start_beat": 52.5,
+      "end_beat": 54.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 54.5,
+      "end_beat": 56.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 56.5,
+      "end_beat": 58.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 58.5,
+      "end_beat": 60.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 60.5,
+      "end_beat": 61.5,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 61.5,
+      "end_beat": 62.5,
+      "symbol": "D7"
+    },
+    {
+      "start_beat": 62.5,
+      "end_beat": 64.5,
+      "symbol": "G"
+    }
+  ],
+  "melody": [
+    {
+      "start_beat": 0.0,
+      "end_beat": 0.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 0.25,
+      "end_beat": 0.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 0.5,
+      "end_beat": 1.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 1.0,
+      "end_beat": 1.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 1.5,
+      "end_beat": 2.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 2.0,
+      "end_beat": 2.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 2.5,
+      "end_beat": 3.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 3.0,
+      "end_beat": 3.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 3.5,
+      "end_beat": 4.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 4.25,
+      "end_beat": 4.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 4.5,
+      "end_beat": 5.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 5.0,
+      "end_beat": 5.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 5.5,
+      "end_beat": 6.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 6.0,
+      "end_beat": 6.5,
+      "pitch": 67
+    },
+    {
+      "start_beat": 6.5,
+      "end_beat": 8.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 8.0,
+      "end_beat": 8.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 8.25,
+      "end_beat": 8.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 8.5,
+      "end_beat": 9.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 9.0,
+      "end_beat": 9.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 9.5,
+      "end_beat": 10.25,
+      "pitch": 74
+    },
+    {
+      "start_beat": 10.25,
+      "end_beat": 10.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 10.5,
+      "end_beat": 11.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 11.0,
+      "end_beat": 11.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 11.5,
+      "end_beat": 12.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 12.25,
+      "end_beat": 12.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 12.5,
+      "end_beat": 13.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 13.0,
+      "end_beat": 13.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 13.5,
+      "end_beat": 14.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 14.0,
+      "end_beat": 14.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 14.5,
+      "end_beat": 16.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 16.0,
+      "end_beat": 16.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 16.25,
+      "end_beat": 16.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 16.5,
+      "end_beat": 17.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 17.0,
+      "end_beat": 17.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 17.5,
+      "end_beat": 18.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 18.0,
+      "end_beat": 18.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 18.5,
+      "end_beat": 19.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 19.0,
+      "end_beat": 19.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 19.5,
+      "end_beat": 20.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 20.25,
+      "end_beat": 20.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 20.5,
+      "end_beat": 21.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 21.0,
+      "end_beat": 21.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 21.5,
+      "end_beat": 22.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 22.0,
+      "end_beat": 22.5,
+      "pitch": 67
+    },
+    {
+      "start_beat": 22.5,
+      "end_beat": 24.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 24.0,
+      "end_beat": 24.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 24.25,
+      "end_beat": 24.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 24.5,
+      "end_beat": 25.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 25.0,
+      "end_beat": 25.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 25.5,
+      "end_beat": 26.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 26.0,
+      "end_beat": 26.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 26.5,
+      "end_beat": 27.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 27.0,
+      "end_beat": 27.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 27.5,
+      "end_beat": 28.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 28.25,
+      "end_beat": 28.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 28.5,
+      "end_beat": 29.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 29.0,
+      "end_beat": 29.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 29.5,
+      "end_beat": 30.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 30.0,
+      "end_beat": 30.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 30.5,
+      "end_beat": 31.5,
+      "pitch": 67
+    },
+    {
+      "start_beat": 32.5,
+      "end_beat": 33.5,
+      "pitch": 72
+    },
+    {
+      "start_beat": 33.5,
+      "end_beat": 34.5,
+      "pitch": 72
+    },
+    {
+      "start_beat": 34.5,
+      "end_beat": 35.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 35.0,
+      "end_beat": 36.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 36.0,
+      "end_beat": 36.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 36.5,
+      "end_beat": 37.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 37.0,
+      "end_beat": 37.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 37.5,
+      "end_beat": 38.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 38.0,
+      "end_beat": 38.5,
+      "pitch": 67
+    },
+    {
+      "start_beat": 38.5,
+      "end_beat": 40.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 40.0,
+      "end_beat": 40.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 40.25,
+      "end_beat": 40.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 40.5,
+      "end_beat": 41.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 41.0,
+      "end_beat": 41.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 41.5,
+      "end_beat": 42.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 42.0,
+      "end_beat": 42.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 42.5,
+      "end_beat": 43.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 43.0,
+      "end_beat": 43.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 43.5,
+      "end_beat": 44.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 44.25,
+      "end_beat": 44.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 44.5,
+      "end_beat": 45.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 45.0,
+      "end_beat": 45.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 45.5,
+      "end_beat": 46.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 46.0,
+      "end_beat": 46.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 46.5,
+      "end_beat": 47.5,
+      "pitch": 67
+    },
+    {
+      "start_beat": 48.5,
+      "end_beat": 49.5,
+      "pitch": 72
+    },
+    {
+      "start_beat": 49.5,
+      "end_beat": 50.5,
+      "pitch": 72
+    },
+    {
+      "start_beat": 50.5,
+      "end_beat": 51.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 51.0,
+      "end_beat": 52.0,
+      "pitch": 76
+    },
+    {
+      "start_beat": 52.0,
+      "end_beat": 52.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 52.5,
+      "end_beat": 53.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 53.0,
+      "end_beat": 53.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 53.5,
+      "end_beat": 54.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 54.0,
+      "end_beat": 54.5,
+      "pitch": 67
+    },
+    {
+      "start_beat": 54.5,
+      "end_beat": 56.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 56.0,
+      "end_beat": 56.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 56.25,
+      "end_beat": 56.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 56.5,
+      "end_beat": 57.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 57.0,
+      "end_beat": 57.5,
+      "pitch": 74
+    },
+    {
+      "start_beat": 57.5,
+      "end_beat": 58.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 58.0,
+      "end_beat": 58.5,
+      "pitch": 76
+    },
+    {
+      "start_beat": 58.5,
+      "end_beat": 59.0,
+      "pitch": 74
+    },
+    {
+      "start_beat": 59.0,
+      "end_beat": 59.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 59.5,
+      "end_beat": 60.25,
+      "pitch": 67
+    },
+    {
+      "start_beat": 60.25,
+      "end_beat": 60.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 60.5,
+      "end_beat": 61.0,
+      "pitch": 71
+    },
+    {
+      "start_beat": 61.0,
+      "end_beat": 61.5,
+      "pitch": 71
+    },
+    {
+      "start_beat": 61.5,
+      "end_beat": 62.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 62.0,
+      "end_beat": 62.5,
+      "pitch": 69
+    },
+    {
+      "start_beat": 62.5,
+      "end_beat": 63.5,
+      "pitch": 67
+    }
+  ],
+  "duration_beats": 64.5
+}

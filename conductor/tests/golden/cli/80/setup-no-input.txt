@@ -1,0 +1,6 @@
+$ ghostband setup --with-base
+mrt2_base is a download of about 2.8 GB. Continue? [y/N]: 
+[stderr]
+ghostband: Setup installed nothing: --with-base was declined
+  next: Run ghostband setup without --with-base, or add --yes to accept it.
+[exit 1]

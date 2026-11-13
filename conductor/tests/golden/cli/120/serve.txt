@@ -1,0 +1,4 @@
+$ ghostband --fake-engine
+ghostband: Listening at http://127.0.0.1:7777/?t=0123456789abcdefghijklmnopqrstuvwxyzABCDEFG
+  next: Open this URL to connect locally.
+[exit 0]

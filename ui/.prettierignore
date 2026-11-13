@@ -1,0 +1,4 @@
+# Written by scripts/export_pages_take.py
+public/takes/
+test-results/
+playwright-report/

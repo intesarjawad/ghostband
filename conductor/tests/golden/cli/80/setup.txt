@@ -1,0 +1,7 @@
+$ ghostband setup --with-base --yes
+ghostband: Installing the engine and models in data
+  next: Wait for setup to finish before starting ghostband.
+ghostband: Setup complete in data
+  next: Run ghostband doctor to confirm the install, then ghostband to start the
+        band.
+[exit 0]

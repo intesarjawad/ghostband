@@ -1,0 +1,33 @@
+$ ghostband doctor
+[stderr]
+ghostband: Engine offline: engine executable engine is missing; run ghostband
+           setup; engine library mlx.metallib is missing; run ghostband setup;
+           models/beat-this/final0.ckpt: missing; Run ghostband setup to restore
+           the model files; models/models/mrt2_small/mrt2_small.mlxfn: missing;
+           Run ghostband setup to restore the model files;
+           models/models/mrt2_small/mrt2_small_state.safetensors: missing; Run
+           ghostband setup to restore the model files;
+           models/resources/musiccoca/audio_preprocessor.tflite: missing; Run
+           ghostband setup to restore the model files;
+           models/resources/musiccoca/mapper.tflite: missing; Run ghostband
+           setup to restore the model files;
+           models/resources/musiccoca/music_encoder.tflite: missing; Run
+           ghostband setup to restore the model files;
+           models/resources/musiccoca/pretrained_vector_quantizer.tflite:
+           missing; Run ghostband setup to restore the model files;
+           models/resources/musiccoca/spm.model: missing; Run ghostband setup to
+           restore the model files;
+           models/resources/musiccoca/text_encoder.tflite: missing; Run
+           ghostband setup to restore the model files;
+           models/resources/spectrostream/decoder.safetensors: missing; Run
+           ghostband setup to restore the model files;
+           models/resources/spectrostream/encoder.safetensors: missing; Run
+           ghostband setup to restore the model files;
+           models/resources/spectrostream/quantizer.safetensors: missing; Run
+           ghostband setup to restore the model files;
+           models/resources/spectrostream/spectrostream_encoder.mlxfn: missing;
+           Run ghostband setup to restore the model files; permissive extraction
+           environment data/permissive is not synced; run ghostband setup
+  next: Run ghostband setup, then ghostband doctor, which names anything still
+        missing.
+[exit 3]

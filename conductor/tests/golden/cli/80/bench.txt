@@ -1,0 +1,10 @@
+$ ghostband bench --report engine.md
+ghostband: Benchmarking mrt2_small for 120 s
+  next: Wait for the figures; the engine is generating audio.
+ghostband: Measured mrt2_small: p95 20.0 ms, 0 underruns over 120 s
+  next: Run ghostband bench --model mrt2_base to check the larger model.
+ghostband: Wrote data/bench/mrt2_small.json
+  next: Run ghostband --help for more commands.
+ghostband: Wrote engine.md
+  next: Run ghostband --help for more commands.
+[exit 0]

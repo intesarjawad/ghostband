@@ -1,0 +1,112 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    uses: ./.github/workflows/ci.yml
+  version:
+    if: github.ref_type == 'tag'
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.13.7"
+      - run: uv run --no-project python scripts/check_version.py "$GITHUB_REF_NAME"
+  engine:
+    if: github.ref_type == 'tag'
+    needs: [verify, version]
+    runs-on: macos-26
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          submodules: recursive
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.13.7"
+          enable-cache: true
+      - run: uv run --with cmake==3.27.9 cmake -S engine -B engine/build
+      - run: uv run --with cmake==3.27.9 cmake --build engine/build --target ghostband-engine -j 2
+      - run: |
+          uv run python scripts/package_engine.py "$GITHUB_REF_NAME"
+          echo "TARBALL=$(python3 conductor/ghostband/release.py "$GITHUB_REF_NAME")" >> "$GITHUB_ENV"
+      - uses: actions/attest-build-provenance@v4.2.2
+        with:
+          subject-path: ${{ env.TARBALL }}
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: engine
+          path: ${{ env.TARBALL }}
+          if-no-files-found: error
+  wheel:
+    if: github.ref_type == 'tag'
+    needs: [verify, version]
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.13.7"
+          enable-cache: true
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+      - run: npm --prefix ui ci --ignore-scripts
+      - run: npm --prefix ui run build
+      - run: uv build --wheel --out-dir dist
+      - name: Check the wheel carries the interface and both extractor locks
+        run: |
+          contents="$(unzip -Z1 dist/*.whl)"
+          for member in \
+            ghostband/ui_dist/index.html \
+            ghostband/tempo_claims.json \
+            ghostband/extract_envs/permissive/uv.lock \
+            ghostband/extract_envs/sheetsage2/uv.lock; do
+            grep -qx "$member" <<<"$contents" || { echo "wheel is missing $member" >&2; exit 1; }
+          done
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: wheel
+          path: dist/*.whl
+          if-no-files-found: error
+  publish:
+    if: github.ref_type == 'tag'
+    needs: [engine, wheel]
+    runs-on: macos-26
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          path: assets
+          merge-multiple: true
+      - name: Write the formula for this tag
+        run: |
+          tarball="assets/$(python3 conductor/ghostband/release.py "$GITHUB_REF_NAME")"
+          checksum="$(shasum -a 256 "$tarball" | cut -d ' ' -f 1)"
+          url="$(python3 conductor/ghostband/release.py "$GITHUB_REF_NAME" --url)"
+          wheel_url="$(python3 conductor/ghostband/release.py "$GITHUB_REF_NAME" --wheel-url)"
+          sed -E \
+            -e "s|^    wheel = \".*\"\$|    wheel = \"$wheel_url\"|" \
+            -e "s|^  url \".*\"\$|  url \"$url\"|" \
+            -e "s|^  sha256 \".*\"\$|  sha256 \"$checksum\"|" \
+            packaging/homebrew/ghostband.rb >assets/ghostband.rb
+          grep -q "^  sha256 \"$checksum\"\$" assets/ghostband.rb
+      - name: Create the draft release
+        run: |
+          flags=(--draft --verify-tag --generate-notes)
+          if [[ "$GITHUB_REF_NAME" == *-rc.* ]]; then flags+=(--prerelease); fi
+          gh release create "$GITHUB_REF_NAME" "${flags[@]}" assets/*

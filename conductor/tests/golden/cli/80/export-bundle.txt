@@ -1,0 +1,10 @@
+$ ghostband export greensleeves.chart.json --bundle greensleeves
+ghostband: Wrote greensleeves/chords.mid
+  next: Run ghostband --help for more commands.
+ghostband: Wrote greensleeves/greensleeves.abc
+  next: Run ghostband --help for more commands.
+ghostband: Wrote greensleeves/greensleeves.chart.json
+  next: Run ghostband --help for more commands.
+ghostband: Wrote greensleeves/melody.mid
+  next: Run ghostband --help for more commands.
+[exit 0]

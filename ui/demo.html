@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/src/favicon.svg" type="image/svg+xml" />
+    <title>Ghostband: the band that is not there</title>
+    <meta
+      name="description"
+      content="Your chord chart, played by an experimental backing band on your Mac. Hear one recorded take, punched as a player-piano roll."
+    />
+    <meta name="theme-color" content="#120d09" />
+    <meta
+      property="og:title"
+      content="Ghostband: the band that is not there, playing your song"
+    />
+    <meta property="og:image" content="social.png" />
+    <link
+      rel="preload"
+      href="/fonts/big-shoulders-stencil-display-800.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/spectral-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body class="loading">
+    <div id="load-state" role="status">Loading the recorded take…</div>
+    <a class="skip" href="#how">Skip the roll</a>
+    <section class="machine" id="machine" aria-labelledby="title">
+      <header class="case-top">
+        <a class="mark" href="#machine">Ghostband</a>
+        <nav aria-label="Page">
+          <a href="#how">How it plays</a>
+          <a href="#measured">Measured</a>
+          <a href="#run">Run it</a>
+        </nav>
+      </header>
+      <div class="paper-base" aria-hidden="true"></div>
+      <canvas class="glass" id="glass" aria-hidden="true"></canvas>
+      <div class="ink" id="ink" aria-hidden="true"></div>
+      <div class="ink print" id="print" aria-hidden="true"></div>
+      <div class="strip" id="strip">
+        <div class="leader" id="leader">
+          <p class="kicker">Roll 1 · cut from a chord chart</p>
+          <h1 id="title">The band that is not there, playing your song.</h1>
+          <p class="lede">
+            Ghostband reads your chord chart and plays a backing band live on
+            your Mac with a real-time music model. Nothing leaves your Mac. The
+            holes are the band; the pencil is your part.
+          </p>
+          <div class="ticket">
+            <div class="label">
+              <b><span data-fill="title"></span> · S. C. Foster, 1848</b>
+              <span
+                >Played as <span data-fill="preset"></span>&nbsp;· tempo
+                <span data-fill="tempo"></span>&nbsp;·
+                <span data-fill="metre"></span>&nbsp;· key of
+                <span data-fill="key"></span
+              ></span>
+            </div>
+            <button class="play" type="button" data-play>
+              <span class="play-word" data-play-word>Play the take</span>
+              <span class="play-time" data-fill="length"></span>
+            </button>
+          </div>
+          <p class="proof">
+            This page plays an archived diagnostic take; the experimental band
+            itself needs an Apple Silicon Mac. This take:
+            <span data-fill="within"></span> of
+            <span data-fill="eligible"></span> chord changes within 120 ms,
+            median <span data-fill="median"></span> ms. All
+            <span data-fill="pool-takes"></span> takes at this setting:
+            <span data-fill="pool-within"></span> of
+            <span data-fill="pool-eligible"></span>.
+          </p>
+        </div>
+      </div>
+      <p class="readout" id="readout" hidden></p>
+      <div class="case-bottom">
+        <button
+          class="transport"
+          type="button"
+          data-play
+          aria-label="Play the take"
+        >
+          <svg viewBox="0 0 12 12" aria-hidden="true">
+            <path data-icon d="M2 1 L11 6 L2 11 Z" />
+          </svg>
+        </button>
+        <span class="clock" id="clock"></span>
+        <input
+          class="scrub"
+          id="scrub"
+          type="range"
+          min="0"
+          step="0.01"
+          value="0"
+          aria-label="Position in the take"
+        />
+        <span class="keys">Space plays · arrow keys step one bar</span>
+      </div>
+      <p class="visually-hidden" id="status" role="status"></p>
+      <div class="play-error" id="play-error" role="alert" hidden>
+        Playback failed.
+        <button type="button" id="retry-play">Retry playback</button>
+      </div>
+    </section>
+
+    <main class="case">
+      <section class="sheet" id="how" aria-labelledby="how-title">
+        <div class="paper">
+          <div class="paper-head">
+            <h2 id="how-title">How it plays</h2>
+            <p class="where" id="key-where"></p>
+          </div>
+          <div class="cut" id="key-cut">
+            <div id="key-drawing"></div>
+            <ol class="notes">
+              <li>
+                <b>Holes.</b> The chart, punched. Each chord tone is a chain of
+                holes on its own row; the bass gets one slot on every beat, the
+                way the band is told to strike it.
+              </li>
+              <li>
+                <b>Pencil.</b> The tune. The band hears it too, but it is
+                pencilled, not punched, because it is the part you can take. The
+                live app can mute the melody so the band leaves it to you.
+              </li>
+              <li>
+                <b>Light.</b> The recording. A hole lights as it crosses the
+                brass bar, as bright as the take is loud in its register: bass
+                slots by the low end, chord holes by the middle.
+              </li>
+              <li>
+                <b>Margin.</b> Printed as each change crosses the bar: +7 ms is
+                late, &minus;78 ms early, missed means never found.
+              </li>
+              <li>
+                <b>Heard.</b> The chord a detector heard on each beat, ringed in
+                red where it is not the chart&rsquo;s chord.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="sheet" id="measured" aria-labelledby="measured-title">
+        <div class="measured-head">
+          <h2 id="measured-title">Measured</h2>
+          <p class="figures">
+            In this take <span data-fill="within"></span> of
+            <span data-fill="eligible"></span> chord changes landed within 120
+            ms of the chart, with a median error of
+            <span data-fill="median"></span> ms;
+            <span data-fill="misses"></span> was never found. Across all
+            <span data-fill="pool-takes"></span> takes at this setting, five
+            charts and three runs each, <span data-fill="pool-within"></span> of
+            <span data-fill="pool-eligible"></span> did. On
+            <span data-fill="agreed"></span> of
+            <span data-fill="compared"></span> beats the detector heard the
+            chord the chart asked for; the exception, beat
+            <span data-fill="heard-off"></span>, is ringed in red on the roll
+            and in How it plays.
+          </p>
+        </div>
+        <div class="lengths" id="lengths"></div>
+        <div class="footnotes">
+          <p>
+            Each tick is a chord change: up when the band changed early, down
+            when late, its length to scale, though the smallest are drawn a
+            little longer so they still show. The fine lines mark 120 ms either
+            side; a red cross was never found.
+          </p>
+          <p>
+            &dagger; Not scored: D7 to D is one triad to the detector, so the
+            chart&rsquo;s change between them is not a change it can hear.
+          </p>
+          <p>
+            Scored by <code>scripts/measure_sync.py</code>, the detector behind
+            the published benchmarks;
+            <code>scripts/export_pages_take.py</code> writes this page&rsquo;s
+            numbers from it.
+          </p>
+          <p>
+            Capture-time recording mode, dropped-frame count and engine/model
+            identity were not retained. The
+            <a href="takes/oh-susanna-t1-o1-r2.json"
+              >source sidecars and file hashes</a
+            >
+            identify the archived WAVs scored here; unknown capture fields
+            remain marked as unknown. These diagnostic results do not establish
+            acceptance. No preset passes sync acceptance yet. Engine timings are
+            unpublished.
+          </p>
+        </div>
+        <table class="visually-hidden">
+          <caption>
+            Every scored chord change in this take
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Beat</th>
+              <th scope="col">Chart</th>
+              <th scope="col">Band</th>
+            </tr>
+          </thead>
+          <tbody id="changes"></tbody>
+        </table>
+      </section>
+
+      <section class="sheet" id="run" aria-labelledby="run-title">
+        <div class="paper tail" id="tail">
+          <div class="runout" id="runout" aria-hidden="true"></div>
+          <div class="tail-print">
+            <h2 id="run-title">Run it</h2>
+            <p>
+              The band is a real-time music model on your Mac&rsquo;s GPU, so it
+              needs Apple Silicon. A browser can only play back what it
+              recorded. Install Python 3.12, uv and Node first. The engine
+              release asset is not yet published, so live playback is not ready
+              from a fresh clone. For the recorded demo:
+            </p>
+            <div class="command">
+              <pre
+                tabindex="0"
+                aria-label="Checkout commands"
+              ><code id="command">git clone https://github.com/intesarjawad/ghostband.git
+cd ghostband
+make setup
+npm --prefix ui run dev</code></pre>
+              <button class="copy" type="button" id="copy">Copy</button>
+            </div>
+            <p>
+              Open the local address printed by Vite followed by
+              <code>/demo.html</code>.
+              <a href="https://github.com/intesarjawad/ghostband"
+                >View the repository</a
+              >.
+            </p>
+            <footer class="colophon">
+              <p class="licence">
+                Code Apache-2.0. Model weights CC-BY-4.0 with Google's usage
+                terms; Google claims no rights in what you make with them.
+                Optional SheetSage2 chart upgrade: non-commercial.
+              </p>
+              <p>
+                The take is <span data-fill="take"></span>, recorded from the
+                band&rsquo;s own output. Oh! Susanna is Stephen C.
+                Foster&rsquo;s, 1848, in the public domain; the harmonisation is
+                <code>charts/oh-susanna.chart.json</code>. Set in Big Shoulders
+                Stencil, Spectral and Courier Prime, under the SIL Open Font
+                Licence.
+              </p>
+            </footer>
+          </div>
+          <span class="eyelet" aria-hidden="true"></span>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/demo.ts"></script>
+  </body>
+</html>

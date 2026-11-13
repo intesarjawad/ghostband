@@ -1,0 +1,7 @@
+$ ghostband play greensleeves.chart.json --seconds 5
+ghostband: Playing greensleeves.chart.json
+  next: Press Ctrl+C to stop.
+[stderr]
+ghostband: Engine failed: engine stopped by SIGKILL
+  next: Run ghostband doctor, then try again; ghostband starts a new engine.
+[exit 8]

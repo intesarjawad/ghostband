@@ -1,0 +1,920 @@
+@font-face {
+  font-family: "Big Shoulders Stencil Display";
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/big-shoulders-stencil-display-800.woff2") format("woff2");
+}
+@font-face {
+  font-family: Spectral;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/spectral-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: Spectral;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/spectral-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: Spectral;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/spectral-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Courier Prime";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/courier-prime-400.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: dark;
+  --case: #120d09;
+  --case-rule: #3a2c1d;
+  --paper: #ebe0c5;
+  --ink: #26190e;
+  --graphite: #4e4a45;
+  --red: #a8231b;
+  --red-on-case: #e0675a;
+  --brass: #c9a25a;
+  --brass-dark: #5c3f17;
+  --muted: #cbbd9c;
+  --dim: #a99c7e;
+  --dark: #0b0806;
+  --lit: #f3dfb6;
+  --stencil: "Big Shoulders Stencil Display", "Arial Narrow", sans-serif;
+  --serif: Spectral, Georgia, serif;
+  --mono: "Courier Prime", "Courier New", monospace;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  /* Roll geometry; demo.ts sets the same values from the viewport. */
+  --bar: 420px;
+  --paper-top: 88px;
+  --paper-bottom: 64px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  background: var(--case);
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: var(--brass);
+  color: var(--ink);
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 4px;
+}
+code,
+pre {
+  font-family: var(--mono);
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 10;
+  padding: 8px 12px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.skip:focus {
+  top: 16px;
+}
+
+/* The machine: case, paper, glass and ink. */
+.machine {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  background: var(--case);
+  isolation: isolate;
+  transition: background-color 700ms var(--ease-out);
+}
+.machine.dark {
+  background: var(--dark);
+}
+.paper-base {
+  position: absolute;
+  left: calc(var(--bar) - 80px);
+  right: 0;
+  top: var(--paper-top);
+  bottom: var(--paper-bottom);
+  background: var(--paper);
+}
+.glass {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 500ms var(--ease-out);
+}
+.glass.on {
+  opacity: 1;
+}
+.machine.still:not(.started) .paper-base {
+  inset: 0;
+  background: var(--case) var(--still) left top / cover no-repeat;
+}
+/* Once the take runs without WebGL the still gives way to plain paper, a brass bar and drawn holes. */
+.machine.still.started .paper-base {
+  left: 0;
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(var(--bar) - 3px),
+      var(--brass) calc(var(--bar) - 3px) calc(var(--bar) + 3px),
+      transparent calc(var(--bar) + 3px)
+    ),
+    var(--paper);
+}
+.ink .punched {
+  display: none;
+}
+.still.started .ink .punched {
+  display: inline;
+}
+.ink,
+.strip {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: var(--paper-clip, none);
+}
+.ink {
+  mix-blend-mode: multiply;
+  -webkit-mask-image: var(--spool-mask, none);
+  mask-image: var(--spool-mask, none);
+}
+.ink svg,
+.strip > * {
+  position: absolute;
+  will-change: transform;
+}
+.ink text {
+  font-family: var(--serif);
+}
+.ink text:not([fill]) {
+  fill: var(--graphite);
+}
+
+/* The margin's live print: each change's offset appears as the change crosses the bar. */
+.ink.print {
+  mix-blend-mode: normal;
+}
+.ink.print .chord {
+  fill: var(--ink);
+  transition: fill 700ms var(--ease-out);
+}
+.print .offset {
+  opacity: 0;
+}
+.ink.print .missed {
+  fill: var(--red);
+}
+.print .shown .offset {
+  opacity: 1;
+}
+.print .pencil {
+  fill: rgb(78 74 69 / 0.1);
+  stroke: rgb(78 74 69 / 0.85);
+  transition: stroke 700ms var(--ease-out);
+}
+/* On the lit vellum everything printed or pencilled reads as a silhouette, as on a lightbox. */
+.dark .print .pencil {
+  fill: none;
+  stroke: rgb(38 25 14 / 0.8);
+}
+/* The lightbox falls off toward the edges, where graphite would sink into the paper. */
+.dark .ink.print .heard:not(.off) {
+  fill: var(--ink);
+}
+.print .fresh text {
+  animation: print 1400ms var(--ease-out);
+}
+@keyframes print {
+  from {
+    fill: #fffaf0;
+    filter: drop-shadow(0 0 5px rgb(255 170 80 / 0.9));
+  }
+}
+
+.leader :focus-visible {
+  outline-color: var(--ink);
+}
+.leader {
+  left: calc(var(--bar) + 50px);
+  top: 124px;
+  width: 540px;
+  color: var(--ink);
+  pointer-events: auto;
+}
+.kicker {
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+.leader h1 {
+  font-family: var(--stencil);
+  font-weight: 800;
+  font-size: 84px;
+  line-height: 0.86;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 18px 0 22px;
+}
+.lede {
+  font-size: 19px;
+  line-height: 1.45;
+  max-width: 34em;
+}
+.ticket {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  margin-top: 22px;
+}
+/* The roll's label, printed on the leader the way a publisher's line is: no box. */
+.label {
+  display: grid;
+  gap: 2px;
+}
+.label b {
+  font-size: 21px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.2;
+}
+.label > span {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--graphite);
+}
+.play {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  min-height: 52px;
+  padding: 12px 20px;
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 160ms var(--ease-out);
+}
+.play:hover {
+  background: #3b2716;
+}
+.play:active {
+  transform: translateY(1px);
+}
+.play-word {
+  font-family: var(--stencil);
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.play-time {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+.proof {
+  margin-top: 12px;
+  max-width: 40em;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--graphite);
+}
+
+.case-top,
+.case-bottom,
+.readout {
+  z-index: 2;
+}
+.case-top {
+  position: absolute;
+  inset: 0 0 auto;
+  height: var(--paper-top);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+.mark {
+  font-family: var(--stencil);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--paper);
+}
+.case-top nav {
+  display: flex;
+  gap: 28px;
+}
+.case-top nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 6px 0;
+}
+.case-top nav a:hover {
+  color: var(--paper);
+}
+.readout {
+  position: absolute;
+  left: calc(var(--bar) + 22px);
+  top: 54px;
+  font-family: var(--mono);
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.readout .off {
+  color: var(--red-on-case);
+}
+
+.case-bottom {
+  position: absolute;
+  inset: auto 0 0;
+  height: var(--paper-bottom);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  /* Clear of the take-up spool and its flanges, which end at 142 px. */
+  padding: 0 40px 0 166px;
+  font-size: 15px;
+  color: var(--muted);
+}
+/* Before the roll moves the leader's button is the only play control. */
+.machine:not(.started) .transport {
+  display: none;
+}
+.transport {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--brass);
+  border-radius: 50%;
+  background: none;
+  color: var(--brass);
+  cursor: pointer;
+}
+.transport svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+.clock {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--paper);
+}
+.scrub {
+  flex: 1;
+  min-width: 80px;
+  height: 44px;
+  appearance: none;
+  background: none;
+  cursor: pointer;
+}
+.scrub::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--brass) var(--played, 0%),
+    rgb(201 162 90 / 0.3) var(--played, 0%)
+  );
+}
+.scrub::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: rgb(201 162 90 / 0.3);
+}
+.scrub::-moz-range-progress {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--brass);
+}
+.scrub::-webkit-slider-thumb {
+  appearance: none;
+  width: 6px;
+  height: 22px;
+  margin-top: -9px;
+  border: 0;
+  border-radius: 1px;
+  background: var(--brass);
+}
+.scrub::-moz-range-thumb {
+  width: 6px;
+  height: 22px;
+  border: 0;
+  border-radius: 1px;
+  background: var(--brass);
+}
+.keys {
+  white-space: nowrap;
+}
+
+/* Below the machine: lengths of the same roll, in the same paper and pencil. */
+.case {
+  border-top: 1px solid var(--case-rule);
+}
+.case > section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 104px 40px;
+}
+/* The headline is the only stencil; below it the sections are headed in print. */
+.case h2 {
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.05;
+  color: var(--paper);
+}
+.paper,
+.length {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgb(38 25 14 / 0.025) 0 1px,
+      transparent 1px 3px
+    ),
+    var(--paper);
+  color: var(--ink);
+}
+/* A length torn off the roll: demo.ts tears each end differently. No frame. */
+.paper {
+  padding: 28px 40px 32px;
+}
+.paper-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 24px;
+}
+.paper h2 {
+  color: var(--ink);
+}
+.where {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--graphite);
+}
+.cut {
+  position: relative;
+  margin-top: 16px;
+}
+.cut svg,
+.length svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.cut text,
+.length text {
+  font-family: var(--serif);
+}
+:is(.cut, .length) text:not([fill]) {
+  fill: var(--graphite);
+}
+.notes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--graphite);
+}
+/* Each note is pencilled in the margin straight above or below its mark; demo.ts places it. */
+.notes li {
+  position: absolute;
+}
+.leaders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  stroke: var(--graphite);
+  stroke-width: 1;
+  stroke-linecap: round;
+  fill: var(--graphite);
+}
+.length text.figure {
+  font-family: var(--mono);
+}
+/* Too narrow for notes beside their marks: each mark carries its note's number, and the notes follow as a key. */
+.leaders circle.number {
+  fill: var(--ink);
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+.leaders text.number {
+  stroke: none;
+  fill: var(--paper);
+  font: 11px var(--mono);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.keyed .notes {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+  counter-reset: note;
+}
+.keyed .notes li {
+  position: relative;
+  padding-left: 28px;
+}
+.keyed .notes li::before {
+  counter-increment: note;
+  content: counter(note);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  font: normal 11px/18px var(--mono);
+  text-align: center;
+  color: var(--paper);
+}
+.notes b {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--ink);
+}
+/* Measured is headed like a printed label, and its figures are the lead. */
+.measured-head {
+  margin-bottom: 40px;
+}
+#measured h2 {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+.figures {
+  margin-top: 14px;
+  font-size: 26px;
+  line-height: 1.45;
+  max-width: 40em;
+  color: var(--paper);
+  font-variant-numeric: tabular-nums;
+}
+.lengths {
+  display: grid;
+  gap: 14px;
+}
+.length {
+  padding: 4px 0;
+}
+.footnotes {
+  display: grid;
+  gap: 10px;
+  max-width: 46em;
+  margin-top: 28px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+/* The page ends on the roll's tail, with the command printed on it. */
+/* The roll's tail: its last chains run out to blank paper, then a tab with a hole, as the leader has. */
+#run {
+  padding-bottom: 72px;
+}
+.tail {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 56px;
+  padding: 44px 240px 44px 0;
+}
+.runout svg {
+  display: block;
+}
+#run h2 {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+.tail p {
+  max-width: 36em;
+  margin-top: 14px;
+  font-size: 18px;
+}
+.command {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 22px;
+}
+/* Each command on one line on a desk; a phone wraps between words. */
+.tail pre {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 18px;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+  color: var(--ink);
+}
+/* The path is never broken at its hyphen; the command wraps only between words. */
+.tail pre .path {
+  white-space: nowrap;
+}
+.copy {
+  flex: none;
+  min-width: 72px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  background: none;
+  font: 14px var(--mono);
+  color: var(--ink);
+  cursor: pointer;
+}
+.copy:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.copy:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+/* The imprint at the end of the roll: licence and credits, printed small. */
+.tail .colophon {
+  display: grid;
+  gap: 6px;
+  margin-top: 30px;
+}
+.tail .colophon p {
+  max-width: 62em;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--graphite);
+}
+.eyelet {
+  position: absolute;
+  top: 50%;
+  right: 34px;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  border-radius: 50%;
+  background: var(--case);
+  box-shadow:
+    0 0 0 3px var(--brass),
+    inset 0 2px 4px rgb(0 0 0 / 0.7);
+}
+
+@media (max-width: 759px) {
+  :root {
+    --paper-top: 52px;
+    --paper-bottom: 88px;
+  }
+  html {
+    font-size: 17px;
+  }
+  .paper-base {
+    left: 16px;
+    right: 16px;
+    top: 120px;
+  }
+  /* Without the drawn spool the paper runs flush up to the nav. */
+  .machine.still.started .paper-base {
+    left: 16px;
+    top: var(--paper-top);
+    background:
+      linear-gradient(
+        to bottom,
+        transparent calc(var(--bar) - var(--paper-top) - 3px),
+        var(--brass) calc(var(--bar) - var(--paper-top) - 3px)
+          calc(var(--bar) - var(--paper-top) + 3px),
+        transparent calc(var(--bar) - var(--paper-top) + 3px)
+      ),
+      var(--paper);
+  }
+  .still.started .ink {
+    clip-path: inset(var(--paper-top) 16px var(--paper-bottom) 16px);
+    -webkit-mask-image: var(--case-mask);
+    mask-image: var(--case-mask);
+  }
+  .case-top {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+  .mark {
+    font-size: 21px;
+  }
+  .case-top nav {
+    gap: 14px;
+  }
+  .leader {
+    left: 34px;
+    right: 34px;
+    width: auto;
+    top: auto;
+    bottom: calc(32% + 24px);
+  }
+  .kicker {
+    display: none;
+  }
+  .leader h1 {
+    font-size: 40px;
+    margin: 0 0 10px;
+  }
+  .lede {
+    font-size: 14.5px;
+    line-height: 1.38;
+  }
+  .ticket {
+    justify-items: stretch;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .label b {
+    font-size: 18px;
+  }
+  .label > span {
+    font-size: 12px;
+  }
+  .play {
+    justify-content: space-between;
+    min-height: 44px;
+  }
+  .proof {
+    font-size: 12.5px;
+    margin-top: 8px;
+  }
+  /* An opaque panel of case under the readout and transport: the paper stops 16 px above the readout. */
+  .machine::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: var(--paper-bottom);
+    z-index: 1;
+    background: var(--case);
+  }
+  /* Below the paper, in the case, where it never covers the light. */
+  .readout {
+    left: 16px;
+    right: 16px;
+    top: auto;
+    bottom: 54px;
+    padding: 0;
+    background: none;
+    color: var(--muted);
+  }
+  .case-bottom {
+    height: 56px;
+    gap: 12px;
+    padding: 0 16px;
+  }
+  .keys {
+    display: none;
+  }
+  .case > section {
+    padding: 72px 16px;
+  }
+  .case h2 {
+    font-size: 34px;
+  }
+  .paper {
+    padding: 20px 16px 24px;
+  }
+  .notes {
+    font-size: 14.5px;
+    line-height: 1.35;
+  }
+  .tail {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 20px 120px;
+  }
+  .runout {
+    justify-self: center;
+  }
+  .tail-print {
+    margin-top: 28px;
+  }
+  .command {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .tail pre {
+    font-size: 15px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .eyelet {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: 22px;
+    width: 22px;
+    height: 22px;
+    margin: 0 0 0 -11px;
+    box-shadow:
+      0 0 0 2px var(--brass),
+      inset 0 1px 3px rgb(0 0 0 / 0.7);
+  }
+  .figures {
+    font-size: 19px;
+  }
+  .footnotes {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  #measured {
+    padding-top: 56px;
+    padding-bottom: 48px;
+  }
+  .measured-head {
+    margin-bottom: 28px;
+  }
+  .lengths {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .glass,
+  .machine,
+  .print .chord {
+    transition: none;
+  }
+  .print .fresh text {
+    animation: none;
+  }
+}
+
+body.loading > :not(#load-state) {
+  display: none;
+}
+body:not(.loading) > #load-state:empty {
+  display: none;
+}
+#load-state {
+  padding: 1rem;
+}
+
+.play-error:not([hidden]) {
+  position: fixed;
+  z-index: 100;
+  inset: auto 1rem 1rem;
+  padding: 1rem;
+  background: var(--case);
+  color: var(--lit);
+  border: 1px solid var(--brass);
+}

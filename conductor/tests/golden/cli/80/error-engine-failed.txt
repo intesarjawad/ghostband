@@ -1,0 +1,7 @@
+$ ghostband bench --report engine.md
+ghostband: Benchmarking mrt2_small for 120 s
+  next: Wait for the figures; the engine is generating audio.
+[stderr]
+ghostband: Engine failed: engine exited with status 1 before opening its socket
+  next: Run ghostband doctor, then try again; ghostband starts a new engine.
+[exit 8]

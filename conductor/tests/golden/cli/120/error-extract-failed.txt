@@ -1,0 +1,5 @@
+$ ghostband import greensleeves.wav
+[stderr]
+ghostband: Extraction failed: the permissive extractor exited with status 1: chord model weights are missing
+  next: Run ghostband doctor to check the extractor, or import a MIDI file or chart of the song instead.
+[exit 5]

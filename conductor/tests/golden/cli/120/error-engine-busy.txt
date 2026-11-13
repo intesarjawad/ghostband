@@ -1,0 +1,5 @@
+$ ghostband play greensleeves.chart.json --seconds 1
+[stderr]
+ghostband: Engine busy: python3.12 ghostband (process 4242) has held it since 2026-11-09 21:05
+  next: Press Ctrl+C where that program runs, then try again; the engine serves one program at a time.
+[exit 13]

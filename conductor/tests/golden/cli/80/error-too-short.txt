@@ -1,0 +1,5 @@
+$ ghostband import short.wav
+[stderr]
+ghostband: Rejected short.wav: minimum duration is 10 s
+  next: Run ghostband import with a recording at least 10 s long.
+[exit 10]

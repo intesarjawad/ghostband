@@ -1,0 +1,4 @@
+$ ghostband export-midi greensleeves.chart.json -o greensleeves.mid
+ghostband: Wrote greensleeves.mid
+  next: Run ghostband --help for more commands.
+[exit 0]

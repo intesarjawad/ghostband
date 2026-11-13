@@ -1,0 +1,11 @@
+$ ghostband import --help
+Usage: ghostband import [OPTIONS] INPUT_PATH
+
+  Import audio, MIDI, a chart or an iReal Pro link without network access.
+
+Options:
+  -o, --output FILE
+  --extractor [permissive|sheetsage2]
+  --time                          Print import stages and elapsed seconds.
+  --help                          Show this message and exit.
+[exit 0]

@@ -1,0 +1,5 @@
+$ ghostband --fake-engine doctor
+ghostband: Local check: fake engine selected
+  next: Run ghostband to start the band, or ghostband --fake-engine to start
+        without audio.
+[exit 0]

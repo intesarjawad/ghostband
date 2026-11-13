@@ -1,0 +1,14 @@
+$ ghostband bench --help
+Usage: ghostband bench [OPTIONS]
+
+  Time frame generation on the real engine and record whether MODEL can play
+  live.
+
+Options:
+  --model [mrt2_small|mrt2_base]
+  --seconds FLOAT RANGE           How long to generate audio; live use needs
+                                  at least the default.  [default: 120.0; x>0]
+  --report FILE                   Markdown report to rewrite; defaults to
+                                  docs/benchmarks/engine.md in a checkout.
+  --help                          Show this message and exit.
+[exit 0]

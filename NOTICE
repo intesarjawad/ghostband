@@ -1,0 +1,19 @@
+Ghostband
+Copyright 2026 Intesar Jawad
+
+This project uses magenta-realtime from https://github.com/magenta/magenta-realtime,
+pinned to v2.0.3 (694a545e4ba0b88bf1150137b129582166d3e07f).
+The upstream project and its bundled dependencies retain their own copyright
+notices and licences in third_party/magenta-realtime.
+
+The iReal Pro chart reader follows the documented 50-character unscrambling
+described by pyRealParser (https://github.com/javadsalman/pyRealParser),
+distributed under the MIT Licence.
+
+Model weights and evaluation datasets are not included. Their licences do not
+change the licence of this repository's original source code.
+
+The Pages roll (ui/demo.html) ships three typefaces under the SIL Open Font
+Licence 1.1, with the licence text in ui/public/fonts/OFL.txt: Big Shoulders
+Stencil Display (The Big Shoulders Project Authors), Spectral (Production
+Type) and Courier Prime (Alan Dague-Greene).

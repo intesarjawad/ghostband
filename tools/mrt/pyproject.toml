@@ -1,0 +1,10 @@
+[project]
+name = "ghostband-mrt-tools"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "magenta-rt[mlx]==2.0.3",
+]
+
+[tool.uv]
+environments = ["sys_platform == 'darwin' and platform_machine == 'arm64'"]

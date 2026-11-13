@@ -1,0 +1,8 @@
+$ ghostband import greensleeves.mid --time
+ghostband: Import validate 0% 0.250 s
+  next: Wait for the chart path before playing.
+ghostband: Import complete 100% 0.500 s
+  next: Wait for the chart path before playing.
+ghostband: Wrote greensleeves.chart.json
+  next: Run ghostband --help for more commands.
+[exit 0]

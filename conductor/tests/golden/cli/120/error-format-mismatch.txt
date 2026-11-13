@@ -1,0 +1,5 @@
+$ ghostband import notes.wav
+[stderr]
+ghostband: Rejected notes.wav: extension and content disagree
+  next: Run ghostband import with a WAV, MP3, FLAC, AIFF, M4A, MIDI or chart JSON matching its extension.
+[exit 12]

@@ -1,0 +1,486 @@
+{
+  "schema_version": 1,
+  "title": "Greensleeves",
+  "source": "W. Chappell, Popular Music of the Olden Time, vol. 1 (1855-1859), p. 230, \"Tune of Green Sleeves. Oldest copy.\", melody in the upper treble voice; bars 1-16 plus opening eighth-note pickup, counting the first full measure as bar 1. The eighth rest before the second strain is retained; final measures of each strain are shortened as printed. Original harmonisation by Ghostband. https://archive.org/details/popularmusicov1185559chap/page/230/mode/1up",
+  "rights": "public-domain",
+  "extractor": "manual",
+  "tempo_bpm": 72,
+  "beat_times_s": [],
+  "time_signature": [
+    6,
+    8
+  ],
+  "key": "Em",
+  "sections": [
+    {
+      "name": "Pickup",
+      "start_beat": 0.0,
+      "end_beat": 0.3333333333333333
+    },
+    {
+      "name": "Verse",
+      "start_beat": 0.3333333333333333,
+      "end_beat": 16.0
+    },
+    {
+      "name": "Refrain",
+      "start_beat": 16.0,
+      "end_beat": 32.0
+    }
+  ],
+  "chords": [
+    {
+      "start_beat": 0.0,
+      "end_beat": 0.3333333333333333,
+      "symbol": "Em"
+    },
+    {
+      "start_beat": 0.3333333333333333,
+      "end_beat": 2.3333333333333335,
+      "symbol": "Em"
+    },
+    {
+      "start_beat": 2.3333333333333335,
+      "end_beat": 4.333333333333333,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 4.333333333333333,
+      "end_beat": 6.333333333333333,
+      "symbol": "Em"
+    },
+    {
+      "start_beat": 6.333333333333333,
+      "end_beat": 8.333333333333334,
+      "symbol": "B7"
+    },
+    {
+      "start_beat": 8.333333333333334,
+      "end_beat": 10.333333333333334,
+      "symbol": "Em"
+    },
+    {
+      "start_beat": 10.333333333333334,
+      "end_beat": 12.333333333333334,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 12.333333333333334,
+      "end_beat": 14.333333333333334,
+      "symbol": "B7"
+    },
+    {
+      "start_beat": 14.333333333333334,
+      "end_beat": 16.0,
+      "symbol": "Em"
+    },
+    {
+      "start_beat": 16.0,
+      "end_beat": 16.333333333333332,
+      "symbol": "N.C."
+    },
+    {
+      "start_beat": 16.333333333333332,
+      "end_beat": 18.333333333333332,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 18.333333333333332,
+      "end_beat": 20.333333333333332,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 20.333333333333332,
+      "end_beat": 22.333333333333332,
+      "symbol": "Em"
+    },
+    {
+      "start_beat": 22.333333333333332,
+      "end_beat": 24.333333333333332,
+      "symbol": "B7"
+    },
+    {
+      "start_beat": 24.333333333333332,
+      "end_beat": 26.333333333333332,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 26.333333333333332,
+      "end_beat": 28.333333333333332,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 28.333333333333332,
+      "end_beat": 30.333333333333332,
+      "symbol": "B7"
+    },
+    {
+      "start_beat": 30.333333333333332,
+      "end_beat": 32.0,
+      "symbol": "Em"
+    }
+  ],
+  "melody": [
+    {
+      "start_beat": 0.0,
+      "end_beat": 0.3333333333333333,
+      "pitch": 64
+    },
+    {
+      "start_beat": 0.3333333333333333,
+      "end_beat": 1.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 1.0,
+      "end_beat": 1.3333333333333333,
+      "pitch": 69
+    },
+    {
+      "start_beat": 1.3333333333333333,
+      "end_beat": 1.8333333333333333,
+      "pitch": 71
+    },
+    {
+      "start_beat": 1.8333333333333333,
+      "end_beat": 2.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 2.0,
+      "end_beat": 2.3333333333333335,
+      "pitch": 71
+    },
+    {
+      "start_beat": 2.3333333333333335,
+      "end_beat": 3.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 3.0,
+      "end_beat": 3.3333333333333335,
+      "pitch": 66
+    },
+    {
+      "start_beat": 3.3333333333333335,
+      "end_beat": 3.8333333333333335,
+      "pitch": 62
+    },
+    {
+      "start_beat": 3.8333333333333335,
+      "end_beat": 4.0,
+      "pitch": 64
+    },
+    {
+      "start_beat": 4.0,
+      "end_beat": 4.333333333333333,
+      "pitch": 66
+    },
+    {
+      "start_beat": 4.333333333333333,
+      "end_beat": 5.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 5.0,
+      "end_beat": 5.333333333333333,
+      "pitch": 64
+    },
+    {
+      "start_beat": 5.333333333333333,
+      "end_beat": 5.833333333333333,
+      "pitch": 64
+    },
+    {
+      "start_beat": 5.833333333333333,
+      "end_beat": 6.0,
+      "pitch": 63
+    },
+    {
+      "start_beat": 6.0,
+      "end_beat": 6.333333333333333,
+      "pitch": 64
+    },
+    {
+      "start_beat": 6.333333333333333,
+      "end_beat": 7.0,
+      "pitch": 66
+    },
+    {
+      "start_beat": 7.0,
+      "end_beat": 7.333333333333333,
+      "pitch": 63
+    },
+    {
+      "start_beat": 7.333333333333333,
+      "end_beat": 8.0,
+      "pitch": 59
+    },
+    {
+      "start_beat": 8.0,
+      "end_beat": 8.333333333333334,
+      "pitch": 64
+    },
+    {
+      "start_beat": 8.333333333333334,
+      "end_beat": 9.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 9.0,
+      "end_beat": 9.333333333333334,
+      "pitch": 69
+    },
+    {
+      "start_beat": 9.333333333333334,
+      "end_beat": 9.833333333333334,
+      "pitch": 71
+    },
+    {
+      "start_beat": 9.833333333333334,
+      "end_beat": 10.0,
+      "pitch": 72
+    },
+    {
+      "start_beat": 10.0,
+      "end_beat": 10.333333333333334,
+      "pitch": 71
+    },
+    {
+      "start_beat": 10.333333333333334,
+      "end_beat": 11.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 11.0,
+      "end_beat": 11.333333333333334,
+      "pitch": 66
+    },
+    {
+      "start_beat": 11.333333333333334,
+      "end_beat": 11.833333333333334,
+      "pitch": 62
+    },
+    {
+      "start_beat": 11.833333333333334,
+      "end_beat": 12.0,
+      "pitch": 64
+    },
+    {
+      "start_beat": 12.0,
+      "end_beat": 12.333333333333334,
+      "pitch": 66
+    },
+    {
+      "start_beat": 12.333333333333334,
+      "end_beat": 12.833333333333334,
+      "pitch": 67
+    },
+    {
+      "start_beat": 12.833333333333334,
+      "end_beat": 13.0,
+      "pitch": 66
+    },
+    {
+      "start_beat": 13.0,
+      "end_beat": 13.333333333333334,
+      "pitch": 64
+    },
+    {
+      "start_beat": 13.333333333333334,
+      "end_beat": 13.833333333333334,
+      "pitch": 63
+    },
+    {
+      "start_beat": 13.833333333333334,
+      "end_beat": 14.0,
+      "pitch": 61
+    },
+    {
+      "start_beat": 14.0,
+      "end_beat": 14.333333333333334,
+      "pitch": 63
+    },
+    {
+      "start_beat": 14.333333333333334,
+      "end_beat": 15.333333333333334,
+      "pitch": 64
+    },
+    {
+      "start_beat": 15.333333333333334,
+      "end_beat": 16.0,
+      "pitch": 64
+    },
+    {
+      "start_beat": 16.333333333333332,
+      "end_beat": 17.333333333333332,
+      "pitch": 74
+    },
+    {
+      "start_beat": 17.333333333333332,
+      "end_beat": 17.833333333333332,
+      "pitch": 74
+    },
+    {
+      "start_beat": 17.833333333333332,
+      "end_beat": 18.0,
+      "pitch": 73
+    },
+    {
+      "start_beat": 18.0,
+      "end_beat": 18.333333333333332,
+      "pitch": 71
+    },
+    {
+      "start_beat": 18.333333333333332,
+      "end_beat": 19.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 19.0,
+      "end_beat": 19.333333333333332,
+      "pitch": 66
+    },
+    {
+      "start_beat": 19.333333333333332,
+      "end_beat": 19.833333333333332,
+      "pitch": 62
+    },
+    {
+      "start_beat": 19.833333333333332,
+      "end_beat": 20.0,
+      "pitch": 64
+    },
+    {
+      "start_beat": 20.0,
+      "end_beat": 20.333333333333332,
+      "pitch": 66
+    },
+    {
+      "start_beat": 20.333333333333332,
+      "end_beat": 21.0,
+      "pitch": 67
+    },
+    {
+      "start_beat": 21.0,
+      "end_beat": 21.333333333333332,
+      "pitch": 64
+    },
+    {
+      "start_beat": 21.333333333333332,
+      "end_beat": 21.833333333333332,
+      "pitch": 64
+    },
+    {
+      "start_beat": 21.833333333333332,
+      "end_beat": 22.0,
+      "pitch": 63
+    },
+    {
+      "start_beat": 22.0,
+      "end_beat": 22.333333333333332,
+      "pitch": 64
+    },
+    {
+      "start_beat": 22.333333333333332,
+      "end_beat": 23.0,
+      "pitch": 66
+    },
+    {
+      "start_beat": 23.0,
+      "end_beat": 23.333333333333332,
+      "pitch": 63
+    },
+    {
+      "start_beat": 23.333333333333332,
+      "end_beat": 24.333333333333332,
+      "pitch": 59
+    },
+    {
+      "start_beat": 24.333333333333332,
+      "end_beat": 25.333333333333332,
+      "pitch": 74
+    },
+    {
+      "start_beat": 25.333333333333332,
+      "end_beat": 25.833333333333332,
+      "pitch": 74
+    },
+    {
+      "start_beat": 25.833333333333332,
+      "end_beat": 26.0,
+      "pitch": 73
+    },
+    {
+      "start_beat": 26.0,
+      "end_beat": 26.333333333333332,
+      "pitch": 71
+    },
+    {
+      "start_beat": 26.333333333333332,
+      "end_beat": 27.0,
+      "pitch": 69
+    },
+    {
+      "start_beat": 27.0,
+      "end_beat": 27.333333333333332,
+      "pitch": 66
+    },
+    {
+      "start_beat": 27.333333333333332,
+      "end_beat": 27.833333333333332,
+      "pitch": 62
+    },
+    {
+      "start_beat": 27.833333333333332,
+      "end_beat": 28.0,
+      "pitch": 64
+    },
+    {
+      "start_beat": 28.0,
+      "end_beat": 28.333333333333332,
+      "pitch": 66
+    },
+    {
+      "start_beat": 28.333333333333332,
+      "end_beat": 28.833333333333332,
+      "pitch": 67
+    },
+    {
+      "start_beat": 28.833333333333332,
+      "end_beat": 29.0,
+      "pitch": 66
+    },
+    {
+      "start_beat": 29.0,
+      "end_beat": 29.333333333333332,
+      "pitch": 64
+    },
+    {
+      "start_beat": 29.333333333333332,
+      "end_beat": 29.833333333333332,
+      "pitch": 63
+    },
+    {
+      "start_beat": 29.833333333333332,
+      "end_beat": 30.0,
+      "pitch": 61
+    },
+    {
+      "start_beat": 30.0,
+      "end_beat": 30.333333333333332,
+      "pitch": 63
+    },
+    {
+      "start_beat": 30.333333333333332,
+      "end_beat": 31.333333333333332,
+      "pitch": 64
+    },
+    {
+      "start_beat": 31.333333333333332,
+      "end_beat": 32.0,
+      "pitch": 64
+    }
+  ],
+  "duration_beats": 32.0
+}

@@ -1,0 +1,5 @@
+$ ghostband import greensleeves.chart.json
+[stderr]
+ghostband: Invalid chart: schema_version: Field required; title: Field required; source: Field required; 10 more fields
+  next: Fix the listed fields in the chart JSON, then import it again.
+[exit 14]

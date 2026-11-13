@@ -1,0 +1,37 @@
+{
+  "heard_agreement": {
+    "Bossa nova / synthwave": {
+      "rate": 0.5477262172686027,
+      "low": 0.4464626176385366,
+      "high": 0.6558539734139883,
+      "takes": 15
+    },
+    "Folk / metal": {
+      "rate": 0.4958485653159321,
+      "low": 0.36658815497525177,
+      "high": 0.630061364547486,
+      "takes": 15
+    },
+    "String quartet / lo-fi": {
+      "rate": 0.6181620802025904,
+      "low": 0.5008266749226988,
+      "high": 0.7421943481902223,
+      "takes": 15
+    },
+    "Warm jazz / chiptune": {
+      "rate": 0.4073200839892513,
+      "low": 0.3127940516875251,
+      "high": 0.5196674168542135,
+      "takes": 15
+    }
+  },
+  "melody_survives": true,
+  "melody_difference": {
+    "mean": 0.05001674927709319,
+    "low": 0.04174611973972389,
+    "high": 0.05821986837010318,
+    "pairs": 120
+  },
+  "tempo_factors_pass": [],
+  "tempo_range": null
+}

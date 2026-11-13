@@ -1,0 +1,9 @@
+$ ghostband export-midi --help
+Usage: ghostband export-midi [OPTIONS] CHART_PATH
+
+  Export harmony and melody to a MIDI file.
+
+Options:
+  -o, --output FILE  [required]
+  --help             Show this message and exit.
+[exit 0]

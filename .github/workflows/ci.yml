@@ -1,0 +1,57 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.13.7"
+          enable-cache: true
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+      # The worst-case inputs include MP3 files, which the tests encode with ffmpeg.
+      - run: brew install ffmpeg
+      - run: make setup
+      - run: make check
+      - run: npm --prefix ui run build
+      - run: uv build
+  sanitize:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          submodules: recursive
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.13.7"
+          enable-cache: true
+      - run: make asan-ubsan
+  upstream:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          submodules: recursive
+      - run: test "$(git -C third_party/magenta-realtime rev-parse HEAD)" = 694a545e4ba0b88bf1150137b129582166d3e07f
+      - run: git submodule status --recursive
+      - run: brew install clang-format
+      - run: find engine -type f \( -name '*.cpp' -o -name '*.h' -o -name '*.mm' \) -exec clang-format --dry-run --Werror {} +
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - run: curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz | tar xz gitleaks
+      - run: ./gitleaks git --redact --exit-code 1

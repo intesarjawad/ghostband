@@ -1,0 +1,13 @@
+$ ghostband export --help
+Usage: ghostband export [OPTIONS] CHART_PATH
+
+  Export a chart to an interchangeable chord-chart format.
+
+Options:
+  --ireal             Write an iReal Pro link.
+  --bundle DIRECTORY  Write chart JSON, split MIDI parts and ABC into a
+                      folder.
+  --share             Drop melody unless the chart's rights allow sharing.
+  -o, --output FILE
+  --help              Show this message and exit.
+[exit 0]

@@ -1,0 +1,14 @@
+$ ghostband setup --help
+Usage: ghostband setup [OPTIONS]
+
+  Install the engine, models and local extraction environment.
+
+Options:
+  --sheetsage2  Also fetch SheetSage2, which is CC-BY-NC-4.0 and non-
+                commercial only.
+  --with-base   Also download mrt2_base, about 2.8 GB; run ghostband bench
+                before using it live.
+  --yes         Accept the SheetSage2 licence and the mrt2_base download non-
+                interactively.
+  --help        Show this message and exit.
+[exit 0]

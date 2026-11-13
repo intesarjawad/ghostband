@@ -1,0 +1,181 @@
+"""Immutable upstream files; both model weights are CC-BY-NC-4.0, non-commercial only."""
+
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class ModelFiles:
+    repository: str
+    revision: str
+    files: tuple[tuple[str, int, str], ...]
+
+
+MODELS = (
+    ModelFiles(
+        "m-a-p/SheetSage2",
+        "b83c3d79a6d98bcffaf8f9ed112c90aa887887bc",
+        (
+            ("LICENSE", 20000, "73593d6cad4ca80f3ab1448a4908f92ab802dfffe029561e3b12fa7d07c8b87c"),
+            (
+                "THIRD_PARTY_NOTICES.md",
+                589,
+                "ab8b195c2c1475f254a04181a9841db2f2581c579b95858c78ee0040eb495a29",
+            ),
+            ("__init__.py", 39, "19539a965cabf22d08231688efc15547d005e6345745f48684c2f02d010f82fd"),
+            (
+                "audio_sheetsage2.py",
+                4289,
+                "ecce56e7bb8a08cbca9eb27a74d9aeff17f55e80efcc7c48f7436440f610ccc1",
+            ),
+            (
+                "chord_spelling_sheetsage2.py",
+                9330,
+                "5a673e3c8caa6d0a4cda19227ce5587c611a2bf85343f6bc623e3d66d99ed8b1",
+            ),
+            (
+                "config.json",
+                2060,
+                "a986e63f5d831ecb823c11d19cfb371d763f25ae2e614ec9acd714c0b8bb87fd",
+            ),
+            (
+                "configuration_mert2.py",
+                3860,
+                "77b53ec9d7ee31a599d744fb006e812c7eeaf7390deb46e2f460cf8c17b00bd6",
+            ),
+            (
+                "configuration_sheetsage2.py",
+                4119,
+                "36d174331b3721d984608252830179bf3516d77b7225f413acc85bdf5efb3bec",
+            ),
+            (
+                "durations_sheetsage2.py",
+                296,
+                "abbc297b70b63a86f8509b1db74d0e85d7b46dcb83867cf33741c43f9d49db83",
+            ),
+            (
+                "exports_sheetsage2.py",
+                10405,
+                "11782cff50f96dac1bf1eedefed86b3cd60222e31b8456bee366eeb373b6a7e5",
+            ),
+            (
+                "generation_sheetsage2.py",
+                24722,
+                "b58dbbfaebfba2a441a79b8c36183f0e4956acdd3aaf7c655c559933b4c20afd",
+            ),
+            ("infer.py", 4253, "20e6b23c910bfdecf012a8ee8d45efcb31cb6cb21351da5921d95fb877e70de6"),
+            (
+                "io_sheetsage2.py",
+                1830,
+                "afb5b4d4a52b513b11cfdad40e7b9d2286dd4ff6585b89688dbb31b3d5376da6",
+            ),
+            (
+                "labels_sheetsage2.py",
+                978,
+                "4a80870695dd91da6070e7d8d0ce6b50f3bf71c3f629417a86cf12f4ef4f97e0",
+            ),
+            (
+                "midi_sheetsage2.py",
+                4230,
+                "32f80d13592c669e56683ebb4c415f13bf8278c8ad1fe43afa500347bed35099",
+            ),
+            (
+                "model.safetensors",
+                228738564,
+                "b235f68091a5f5b644000f2b5acb57d1e70432aca2b34ab1b9cf27236e1f4274",
+            ),
+            (
+                "modeling_mert2.py",
+                17081,
+                "b1a3174e5649c4b26b0c90d8626f0adacfbbba111a58ed3bb72ad651945a2f5c",
+            ),
+            (
+                "modeling_sheetsage2.py",
+                24664,
+                "f1c45346dd76329fcbeadc5c721312836509326310c034634bc12d75263688bb",
+            ),
+            (
+                "notation_sheetsage2.py",
+                55775,
+                "f75f0e8b268cd9e9c622d791d3fd77d2e68ad355a4e67018c7e15aeb2bc05af7",
+            ),
+            (
+                "pipeline_sheetsage2.py",
+                15022,
+                "0ae572554ca375323e2aa4ea1fb25ba27e7f4d520c0ba5b101d74930c0a66c33",
+            ),
+            (
+                "processing_sheetsage2.py",
+                5408,
+                "ec5ef34ad61455437c750dd5ffb92142f7309638559e74114c639b57da56263c",
+            ),
+            (
+                "processor_config.json",
+                277,
+                "1eed73513a74029fe74c71faba70f8cff002ae7be23ac1c926125846d1b29817",
+            ),
+            ("render.py", 1927, "446b18e0ba7250c8584c14bda241f8d063083cd10b1432de82c3cf56736af9de"),
+            (
+                "rendering_sheetsage2.py",
+                15862,
+                "ddbcaf314139d67727cb5df6840d7d60d671d5c67f6b185a26b840df1e2d9288",
+            ),
+            (
+                "schema_sheetsage2.py",
+                3893,
+                "3ee069f0d4dcfb8080f730c43676318d471ab6b3cfef86c6c225aa63a9db182f",
+            ),
+            (
+                "setup_render.py",
+                1540,
+                "8ee1004067f8e50443005a761d86435337f6ee71eeabf447d543eb5f3ad5561d",
+            ),
+            (
+                "tensors_sheetsage2.py",
+                4645,
+                "51f72b51ed5a22c751d5adf915198490b1a95ec8959fcf9a38ee71b4444fc8b3",
+            ),
+            (
+                "tokenization_sheetsage2.py",
+                30043,
+                "2ad9f7734e3d9f750fe575f22fd9ec03a9a4ab52497a6314e76f53ed9024fa75",
+            ),
+        ),
+    ),
+    ModelFiles(
+        "m-a-p/MERT-v2-FullSong",
+        "d8ba1c745e733b3908ce6ad16ebeb17ac7600a42",
+        (
+            ("LICENSE", 20000, "73593d6cad4ca80f3ab1448a4908f92ab802dfffe029561e3b12fa7d07c8b87c"),
+            (
+                "THIRD_PARTY_NOTICES.md",
+                541,
+                "ce8fd578969f1bdad9a0be5e20cab0251dc4253bd4dbfaa9abeb1c11d68bafdc",
+            ),
+            (
+                "config.json",
+                882,
+                "f2e194895f58be3ddba327255db129ff0e3bee550cc0ecf08e4d22d79ce3bca3",
+            ),
+            (
+                "configuration_mert2.py",
+                3860,
+                "77b53ec9d7ee31a599d744fb006e812c7eeaf7390deb46e2f460cf8c17b00bd6",
+            ),
+            (
+                "model.safetensors",
+                2529812848,
+                "e6dd2ab187d6dd62b6521cd7d8f932e237acf0c5757745a7232082e28391350d",
+            ),
+            (
+                "modeling_mert2.py",
+                17081,
+                "b1a3174e5649c4b26b0c90d8626f0adacfbbba111a58ed3bb72ad651945a2f5c",
+            ),
+            (
+                "preprocessor_config.json",
+                215,
+                "fc7337f113b71062b8efd03f8a43a07aa769ce85c6a53fdc0b3bb90c299fe63f",
+            ),
+        ),
+    ),
+)

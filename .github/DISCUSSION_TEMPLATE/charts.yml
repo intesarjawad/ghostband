@@ -1,0 +1,22 @@
+title: "Chart: "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Composition
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source and rights
+      description: Link to the public-domain source or explain your ownership. Include the source page and bar range.
+    validations:
+      required: true
+  - type: textarea
+    id: chart
+    attributes:
+      label: Chart
+      description: Share chart JSON with rights and source fields. Do not include recordings or copyrighted arrangements.
+    validations:
+      required: true

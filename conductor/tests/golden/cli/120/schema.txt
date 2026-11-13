@@ -1,0 +1,4 @@
+$ ghostband schema -o chart.schema.json
+ghostband: Wrote chart.schema.json
+  next: Run ghostband --help for more commands.
+[exit 0]

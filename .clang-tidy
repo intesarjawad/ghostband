@@ -1,0 +1,3 @@
+Checks: 'bugprone-*,performance-*,modernize-*,concurrency-*,-modernize-use-trailing-return-type'
+WarningsAsErrors: '*'
+HeaderFilterRegex: 'engine/src/.*'

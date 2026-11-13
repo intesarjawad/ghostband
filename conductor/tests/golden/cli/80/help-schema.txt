@@ -1,0 +1,9 @@
+$ ghostband schema --help
+Usage: ghostband schema [OPTIONS]
+
+  Write the portable chart JSON schema.
+
+Options:
+  -o, --output FILE
+  --help             Show this message and exit.
+[exit 0]

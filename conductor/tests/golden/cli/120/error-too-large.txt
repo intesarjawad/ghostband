@@ -1,0 +1,5 @@
+$ ghostband import huge.wav
+[stderr]
+ghostband: Rejected huge.wav: upload exceeds 200 MB
+  next: Run ghostband import with a file no larger than 200 MB.
+[exit 11]

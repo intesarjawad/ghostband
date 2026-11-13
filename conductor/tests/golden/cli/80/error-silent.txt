@@ -1,0 +1,5 @@
+$ ghostband import silent.wav
+[stderr]
+ghostband: Rejected silent.wav: the file is silent
+  next: Run ghostband import with an audible recording.
+[exit 9]

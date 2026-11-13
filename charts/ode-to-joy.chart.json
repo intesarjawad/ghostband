@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "title": "Ode to Joy",
+  "source": "L. van Beethoven, Symphony No. 9, Op. 125, Finale, Ludwig van Beethovens Werke, Serie 1, No. 9 (Leipzig: Breitkopf & H\u00e4rtel, 1864), plate B.9, p. 181, bars 92-99, the opening eight bars of the instrumental theme, violoncello staff at written pitch. Original harmonisation by Ghostband. https://imslp.org/wiki/Symphony_No.9,_Op.125_(Beethoven,_Ludwig_van) ; scan https://s9.imslp.org/files/imglnks/usimg/1/11/IMSLP516486-PMLP1607-Beethoven_Breitkopf_Serie_1_Band_3_B_9_1_%28etc%29.pdf#page=181",
+  "rights": "public-domain",
+  "extractor": "manual",
+  "tempo_bpm": 160,
+  "beat_times_s": [],
+  "time_signature": [
+    4,
+    4
+  ],
+  "key": "D",
+  "sections": [
+    {
+      "name": "Theme",
+      "start_beat": 0.0,
+      "end_beat": 32.0
+    }
+  ],
+  "chords": [
+    {
+      "start_beat": 0.0,
+      "end_beat": 4.0,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 4.0,
+      "end_beat": 8.0,
+      "symbol": "A7"
+    },
+    {
+      "start_beat": 8.0,
+      "end_beat": 10.0,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 10.0,
+      "end_beat": 11.0,
+      "symbol": "A"
+    },
+    {
+      "start_beat": 11.0,
+      "end_beat": 12.0,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 12.0,
+      "end_beat": 16.0,
+      "symbol": "A"
+    },
+    {
+      "start_beat": 16.0,
+      "end_beat": 20.0,
+      "symbol": "D"
+    },
+    {
+      "start_beat": 20.0,
+      "end_beat": 24.0,
+      "symbol": "A7"
+    },
+    {
+      "start_beat": 24.0,
+      "end_beat": 28.0,
+      "symbol": "G"
+    },
+    {
+      "start_beat": 28.0,
+      "end_beat": 32.0,
+      "symbol": "D"
+    }
+  ],
+  "melody": [
+    {
+      "start_beat": 0.0,
+      "end_beat": 2.0,
+      "pitch": 54
+    },
+    {
+      "start_beat": 2.0,
+      "end_beat": 3.0,
+      "pitch": 55
+    },
+    {
+      "start_beat": 3.0,
+      "end_beat": 4.0,
+      "pitch": 57
+    },
+    {
+      "start_beat": 4.0,
+      "end_beat": 5.0,
+      "pitch": 57
+    },
+    {
+      "start_beat": 5.0,
+      "end_beat": 6.0,
+      "pitch": 55
+    },
+    {
+      "start_beat": 6.0,
+      "end_beat": 7.0,
+      "pitch": 54
+    },
+    {
+      "start_beat": 7.0,
+      "end_beat": 8.0,
+      "pitch": 52
+    },
+    {
+      "start_beat": 8.0,
+      "end_beat": 10.0,
+      "pitch": 50
+    },
+    {
+      "start_beat": 10.0,
+      "end_beat": 11.0,
+      "pitch": 52
+    },
+    {
+      "start_beat": 11.0,
+      "end_beat": 12.0,
+      "pitch": 54
+    },
+    {
+      "start_beat": 12.0,
+      "end_beat": 13.5,
+      "pitch": 54
+    },
+    {
+      "start_beat": 13.5,
+      "end_beat": 14.0,
+      "pitch": 52
+    },
+    {
+      "start_beat": 14.0,
+      "end_beat": 16.0,
+      "pitch": 52
+    },
+    {
+      "start_beat": 16.0,
+      "end_beat": 18.0,
+      "pitch": 54
+    },
+    {
+      "start_beat": 18.0,
+      "end_beat": 19.0,
+      "pitch": 55
+    },
+    {
+      "start_beat": 19.0,
+      "end_beat": 20.0,
+      "pitch": 57
+    },
+    {
+      "start_beat": 20.0,
+      "end_beat": 21.0,
+      "pitch": 57
+    },
+    {
+      "start_beat": 21.0,
+      "end_beat": 22.0,
+      "pitch": 55
+    },
+    {
+      "start_beat": 22.0,
+      "end_beat": 23.0,
+      "pitch": 54
+    },
+    {
+      "start_beat": 23.0,
+      "end_beat": 24.0,
+      "pitch": 52
+    },
+    {
+      "start_beat": 24.0,
+      "end_beat": 26.0,
+      "pitch": 50
+    },
+    {
+      "start_beat": 26.0,
+      "end_beat": 27.0,
+      "pitch": 52
+    },
+    {
+      "start_beat": 27.0,
+      "end_beat": 28.0,
+      "pitch": 54
+    },
+    {
+      "start_beat": 28.0,
+      "end_beat": 29.5,
+      "pitch": 52
+    },
+    {
+      "start_beat": 29.5,
+      "end_beat": 30.0,
+      "pitch": 50
+    },
+    {
+      "start_beat": 30.0,
+      "end_beat": 32.0,
+      "pitch": 50
+    }
+  ],
+  "duration_beats": 32.0
+}

@@ -1,0 +1,4 @@
+$ ghostband export greensleeves.chart.json --ireal -o greensleeves.txt
+ghostband: Wrote greensleeves.txt
+  next: Run ghostband --help for more commands.
+[exit 0]
