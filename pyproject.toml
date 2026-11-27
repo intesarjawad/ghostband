@@ -16,7 +16,7 @@ dependencies = ["aiohttp~=3.14.5", "pydantic~=2.14.3", "numpy~=2.5.4", "soundfil
 [project.scripts]
 ghostband = "ghostband.cli:main"
 [dependency-groups]
-dev = ["ruff==0.17.4", "pyright==1.1.414", "pytest==9.2.0", "hypothesis~=6.170", "pre-commit==4.7.0"]
+dev = ["ruff==0.17.6", "pyright==1.1.414", "pytest==9.2.0", "hypothesis~=6.170", "pre-commit==4.7.0"]
 [tool.ruff]
 line-length = 100
 target-version = "py312"
